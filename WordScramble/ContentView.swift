@@ -32,12 +32,16 @@ struct ContentView: View {
                         }
                     }
                 }
-                Section {
-                    HStack {
-                        Text("Score \(score)")
-                    }
-                }
             }
+            .safeAreaInset(edge: .bottom) {
+                Text("Score \(score)")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.blue)
+                    .foregroundStyle(.white)
+                    .font(.title)
+            }
+            
             .toolbar {
                 Button("Start New Game", action: startGame)
             }
